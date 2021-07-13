@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: orange;
+  height: 100vh;
+}
+.heading {
+  color: white;
+  font-size: 6rem;
+  letter-spacing: 0.5rem;
+  word-spacing: 0.5rem;
+}
+.memory__game {
+  display: flex;
+  flex-wrap: wrap;
+  width: 45vw;
+  height: 30vw;
+  border: 1px solid skyblue;
+  //   perspective: 150rem;
+}
+.memory__card.flip {
+  transform: rotateY(180deg);
+  //   .memory__card-front {
+  //     transform: scale(2);
+  //   }
+}
+.memory__card:active {
+  transform: scale(0.95);
+}
+.memory__card {
+  transform: scale(1);
+  width: 25%;
+  height: 33.33%;
+  position: relative;
+  border: 1px solid white;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  &-front {
+    transform: rotateY(180deg);
+  }
+
+  &-front,
+  &-back {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    backface-visibility: hidden;
+    position: absolute;
+  }
+}
